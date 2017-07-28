@@ -1,0 +1,15 @@
+machine:
+  node:
+    version: 4.8.0
+dependencies:
+  cache_directories:
+    - ~/.meteor
+  pre:
+    - npm install --global snyk
+    - meteor || curl https://install.meteor.com | /bin/sh
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/reports
+#    - eslint ./src/ --format junit --output-file $CIRCLE_TEST_REPORTS/reports/eslint.xml
+  post:
+    - snyk test

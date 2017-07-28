@@ -1,0 +1,26 @@
+// If you want to override materialize sass variables you can uncomment the following:
+// @import "{poetic:materialize-scss}/sass/components/_color.scss";
+@import "{poetic:materialize-scss}/sass/materialize.scss";
+
+// sticky footer
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#contentView {
+  flex: 1 0 auto;
+}
+
+.link {
+  color: #039be5;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
+footer select {
+  color: #000;
+}
