@@ -39,3 +39,4 @@ storyteller:messaging-server
 storyteller:accounts-server
 dynamic-import
 materialize:materialize
+email
