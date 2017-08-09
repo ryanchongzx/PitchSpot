@@ -31,7 +31,7 @@ export default class Carousell extends React.Component {
     <img className="card-panel remove-padding " src="/images/Test.jpg" /></div>
 
     <div className="carousel-item " >
-    <img className="card-panel remove-padding " src="/images/HomePagev2.jpg" /></div>
+    <img className="card-panel remove-padding " src="/images/HomePagev2-2.jpg" /></div>
 
 
   </div>
