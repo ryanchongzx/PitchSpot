@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
+import DashboardFriends from '../../users/containers/dashboard_friends.js';
 
 class NavUser extends React.Component {
   constructor(props) {
@@ -28,34 +29,41 @@ class NavUser extends React.Component {
         src={this.props.avatar}
       /></span>);
     } else {
-      return (<i className="material-icons">account_circle</i>);
+      return (<i className="material-icons md-20">account_circle</i>);
     }
   }
 
   render() {
-    return (<header className="navbar-fixed">
-      <nav role="navigation">
-        <div className="nav-wrapper container">
+    return (<header className="navbar-fixed ">
+    <nav role="navigation" className="indigo darken-4">
+        <div className="nav-wrapper container paddingLogo">
           <ul className="left">
-            <li>
-              <Link to={'#'} data-activates="slide-out" className="button-collapse show-on-large">
-                <i className="material-icons">menu</i>
+             <li>
+              <Link to={'/dashboard'} className="brand-logo left">
+
+              <img  src="/images/navbar-logo.png" height="50" width="40" className="brand-logo left " />
+              
+                
               </Link>
-            </li>
-            <li><Link to={'/dashboard'} id="pageName" className="brand-logo">
-              <FormattedMessage
-                id="sitename"
-                defaultMessage="Socialize-starter"
-              />
-            </Link></li>
+              </li>
+          
           </ul>
           <ul className="right">
+
+<DashboardFriends/>
+
             <li className="hide-on-small-only">
-              <Link to={'/dashboard'} className="waves-effect"><i className="material-icons">dashboard</i></Link>
+              <Link to={'/dashboard'} className="waves-effect"><i className="material-icons md-20">home</i></Link>
             </li>
+
+
+
             <li className="hide-on-med-and-down">
-              <Link to={'/pm'} className="waves-effect"><i className="material-icons">mail</i></Link>
+              <Link to={'/pm'} className="waves-effect"><i className="material-icons md-20">mail</i></Link>
             </li>
+
+           
+
             <li>
               <a
                 title="Options"

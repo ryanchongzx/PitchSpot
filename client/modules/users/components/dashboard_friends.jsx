@@ -9,25 +9,9 @@ export default class DashboardFriends extends React.Component {
     if (user) {
       // friends requests
       if (user.numRequests() > 0) {
-        return (<div className="col s6 m4 l3 center-align">
-          <div className="card hoverable indigo waves-effect waves-block waves-light">
-            <Link to={'/user/friend-requests'}>
-              <div className="card-image">
-                <i className="material-icons white-text">person_add</i>
-              </div>
-              <div className="card-content">
-                <p className="flow-text white-text">
-                  <FormattedMessage
-                    id="user.friend.requests"
-                    values={{
-                      num: user.numRequests(),
-                    }}
-                  />
-                </p>
-              </div>
-            </Link>
-          </div>
-        </div>);
+        return (<li className="hide-on-med-and-down">
+              <Link to={'/user/friend-requests'} className="waves-effect"><i className="material-icons">person_add</i></Link>
+            </li>);
       } else {
         return null;
       }

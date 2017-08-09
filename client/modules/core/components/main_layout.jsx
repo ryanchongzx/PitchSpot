@@ -20,7 +20,7 @@ const Layout = props => (
     <div id="contentView" className="container">
       <div className="row">
         <div className="col s12">
-          <main className="card-panel">
+          <main className="">
             {props.children}
           </main>
         </div>

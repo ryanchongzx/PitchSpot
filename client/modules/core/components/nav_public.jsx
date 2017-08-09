@@ -11,15 +11,20 @@ export default class NavPublic extends React.Component {
   render() {
     return (
       <header className="navbar-fixed">
-        <nav role="navigation">
-          <div className="container">
-            <div className="nav-wrapper">
-              <Link to={'/'} className="brand-logo left">
-                <FormattedMessage
-                  id="sitename"
-                  defaultMessage="Socialize-starter"
-                />
+        <nav role="navigation" className="indigo darken-4">
+         <div className="nav-wrapper container paddingLogo">
+            <div className="nav-wrapper ">
+              <ul className="left">
+             <li>
+              <Link to={'/dashboard'} className="brand-logo left">
+
+              <img  src="/images/navbar-logo.png" height="50" width="40" className="brand-logo left " />
+              
+                
               </Link>
+              </li>
+          
+          </ul>
               <Link to={'#'} data-activates="nav-mobile" className="button-collapse right">
                 <i className="material-icons">menu</i>
               </Link>

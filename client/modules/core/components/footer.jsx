@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import LanguageSelect from '../containers/language_select.js';
+import { Link } from 'react-router';
 
 export default class Footer extends React.Component {
   thisYear() {
@@ -8,8 +9,9 @@ export default class Footer extends React.Component {
   }
 
   render() {
-    return (<footer className="page-footer">
-      <div className="footer-copyright">
+    return (<footer className="page-footer fixed indigo darken-4">
+      <div className="footer-copyright indigo darken-4">
+
         <div className="container row">
           <div className="col s12 m6">
             <LanguageSelect />
@@ -17,7 +19,7 @@ export default class Footer extends React.Component {
           <div className="col s12 m6">
             <FormattedMessage
               id="common.legal.disclaimer"
-              defaultMessage="© {year} All rights reserved, all texts belong to their respective authors."
+              defaultMessage="© {year} All rights reserved."
               values={{year: this.thisYear()}}
             />
           </div>
@@ -26,3 +28,4 @@ export default class Footer extends React.Component {
     </footer>);
   }
 }
+

@@ -133,7 +133,7 @@ export default function (injectDeps) {
             <Route path=":conversationId" component={UserConversation} onEnter={requireAuth} />
           </Route>
           <Route path="/" component={MainLayoutCtx}>
-            <IndexRoute component={Homepage} onEnter={anonOnly} />
+            <IndexRoute component={SignIn} onEnter={anonOnly} />
             <Route path="dashboard" component={Dashboard} onEnter={requireAuth} />
             <Route path="login" component={SignIn} onEnter={anonOnly} />
             <Route path="register" component={SignUp} onEnter={anonOnly} />
