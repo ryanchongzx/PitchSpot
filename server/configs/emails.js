@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
+import { Email } from 'meteor/email';
 
 export default function () {
   Accounts.urls.resetPassword = function (token) {
@@ -18,16 +19,26 @@ export default function () {
     // TODO Don't forget to set the mailing url
     // process.env.MAIL_URL = Meteor.settings.mailUrl
 
+    var smtp = {
+    username: 'teampitchspot@gmail.com',   // eg: server@gentlenode.com
+    password: 'stsyryzf',   // eg: 3eeP1gtizk5eziohfervU
+    server:   'smtp.gmail.com',  // eg: mail.gandi.net
+    port: 587
+  };
+
+    process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
+
+
     /**
      * Accounts e-mail templates
      */
-    Accounts.emailTemplates.siteName = 'Socialize-starter';
-    Accounts.emailTemplates.from = 'Socialize-starter no-reply <no-reply@socialize.net>';
+    Accounts.emailTemplates.siteName = 'PitchSpot';
+    Accounts.emailTemplates.from = 'PitchSpot no-reply <no-reply@pitchspot.co>';
 
     // Account enrollment
     Accounts.emailTemplates.enrollAccount = {
       subject(user) {
-        return 'Welcome to Socialize-starter, ' + user.username;
+        return 'Welcome to PitchSpot, ' + user.username;
       },
       text(user, url) {
         return 'Hello ' + user.username + '\n\n' +
@@ -40,7 +51,7 @@ export default function () {
     // Reset password
     Accounts.emailTemplates.resetPassword = {
       subject() {
-        return 'Socialize-starter reset password';
+        return 'PitchSpot reset password';
       },
       text(user, url) {
         return 'Hello ' + user.username + '!\n\n' +
@@ -53,7 +64,7 @@ export default function () {
     // Verifying email
     Accounts.emailTemplates.verifyEmail = {
       subject() {
-        return 'Socialize-starter e-mail verification';
+        return 'PitchSpot e-mail verification';
       },
       text(user, url) {
         return 'Hello ' + user.username + '!\n\n' +
@@ -63,4 +74,3 @@ export default function () {
     };
   });
 }
-
