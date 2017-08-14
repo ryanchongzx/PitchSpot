@@ -36,7 +36,7 @@ export default class UserProfile extends React.Component {
         alt={'Avatar for ' + this.props.profile.username}
       />);
     } else {
-      return (<i className="material-icons profile-picture">account_circle</i>);
+      return (<img src="/images/user.jpg"/>);
     }
   }
 
@@ -227,7 +227,7 @@ export default class UserProfile extends React.Component {
             {propery: 'og:image' , content: ''},
           ]}
         />
-        <section className="card-panel">
+        <section className="card-panel col m12 s12 l3">
           <span className="profile-picture-box">{this.showAvatar()}</span>
           <h1 className="profile-username">{this.props.profileUser.username}</h1>
           <hr />
@@ -236,19 +236,16 @@ export default class UserProfile extends React.Component {
         </section>
         <section className="row">
           <div className="col s12 m10 l9">
-            <div className="card-panel">
+            <div className="card-panel pitchspot-blue-two">
               <h4>
-                <FormattedMessage
-                  id="feed"
-                  defaultMessage="Stream"
-                />
+                <span>Initiated Projects</span>
               </h4>
               {newPost}
               <UserFeed feedUser={this.props.profileUser} />
             </div>
           </div>
           <div className="col s12 m2 l3">
-            <div className="card-panel">
+            <div className="card-panel pitchspot-blue-two">
               <h5>{profile.givenName} {profile.familyName}</h5>
               <p>{bio}</p>
               <p>

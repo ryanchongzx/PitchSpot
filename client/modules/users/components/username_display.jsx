@@ -10,13 +10,15 @@ class UsernameDisplay extends React.Component {
       if (this.props.profile.avatar) {
         avatar = (<img src={this.props.profile.avatar} alt={this.props.user.username} className="circle" />);
       } else {
-        avatar = (<i className="material-icons circle">account_circle</i>);
+        avatar = (<img src="/images/friends.jpg"/>);
       }
     }
 
     return (
       <Link to={'/users/' + this.props.user.username}>
-        {avatar}{this.props.user.username}
+        {avatar}
+        <span className="username-display">{this.props.user.username}
+        </span>
       </Link>
     );
   }

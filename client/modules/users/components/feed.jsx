@@ -4,6 +4,8 @@ import { Link } from 'react-router';
 import { FormattedMessage, FormattedRelative } from 'react-intl';
 import PropTypes from 'prop-types';
 
+import InitiateChat from '../../messaging/components/initiate_chat.jsx';
+
 export default class UserFeed extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,7 @@ export default class UserFeed extends React.Component {
 
   likingDisplay(post) {
     return (<span className="link" onClick={this.liking.bind(this, post)}>
-      {post.likeCount()} <i className="material-icons">favorite</i>
+      {post.likeCount()} <i className="material-icons">thumb_up</i>
     </span>);
   }
 
@@ -33,22 +35,67 @@ export default class UserFeed extends React.Component {
    * @access private
    */
   listPost() {
+    
+
     const { posts } = this.props;
     if (posts !== undefined && posts !== null) {
       if (posts.length > 0) {
         return posts.map((post) => {
-          return (<div key={post._id} className="row card-panel hoverable">
-            <div className="col s2 center-align">
-              <Link to={'users/' + post.poster().username} >
-                <i className="material-icons">account_circle</i><br />
-                {post.poster().username}
-              </Link>
-            </div>
-            <div className="col s7">{S(post.body).decodeHTMLEntities().toString()}</div>
-            <div className="col s3">
-              <FormattedRelative value={post.date} /><br />
-              {this.likingDisplay(post)}
-            </div>
+          return (<div key={post._id}>
+            
+
+<div className="row">
+<div className="col s12 m12  remove-padding">
+     <div className="card horizontal hoverable">
+      <div className="card-image imageSize">
+        <img src="/images/HomePagev2-2.jpg"/>
+      </div>
+      <div className="card-stacked">
+        <div className="card-content">
+       <div className="col s12 m12">{S(post.body).decodeHTMLEntities().toString()}</div>
+       <br/>
+         
+        </div>
+
+
+
+
+        <div className="card-panel remove-shadow">
+   <InitiateChat  chatwith={post.poster().username } PosterID={post.poster()._id} 
+            buttonText={<i className=" material-icons">chat_bubble</i>}
+            buttonClass={'right valign btn-floating btn waves-effect waves-light blue'}
+          />
+    
+          
+
+
+<div className="col s3 ">
+  <Link to={'users/' + post.poster().username} >
+
+    {post.poster().username}
+
+  </Link>
+</div>
+            
+         
+<div className="col s3">
+   <FormattedRelative value={post.date} />  
+</div>
+
+<div className= "col s3">
+ {this.likingDisplay(post)}
+</div>
+          </div>
+       
+          
+         
+      </div>
+    </div>
+  </div>
+   </div>
+          
+
+
           </div>);
         });
       } else {
@@ -72,6 +119,7 @@ export default class UserFeed extends React.Component {
   }
 
   render() {
+
     let addToLimit;
     const { posts, postsLimit, totalPosts } = this.props;
     if (posts !== undefined && posts !== null) {

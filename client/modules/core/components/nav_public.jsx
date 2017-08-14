@@ -18,7 +18,7 @@ export default class NavPublic extends React.Component {
              <li>
               <Link to={'/dashboard'} className="brand-logo left">
 
-              <img  src="/images/navbar-logo.png" height="50" width="40" className="brand-logo left " />
+              <img  src="/images/navbar-logo.png" height="30" width="24" className="brand-logo left " />
               
                 
               </Link>
@@ -30,16 +30,12 @@ export default class NavPublic extends React.Component {
               </Link>
               <ul className="right hide-on-med-and-down">
                 <li><Link to={'/register'}>
-                  <FormattedMessage
-                    id="common.signup"
-                    defaultMessage="Register"
-                  />
+                  <span className="small-font"> Register
+                  </span>
                 </Link></li>
-                <li><Link to={'/login'}><i className="material-icons right">lock_open</i>
-                  <FormattedMessage
-                    id="common.signin"
-                    defaultMessage="Login"
-                  />
+                <li><Link to={'/login'}><i className="material-icons right small-lock">lock_open</i>
+                  <span className="small-font"> Login
+                  </span>
                 </Link></li>
               </ul>
               <ul className="side-nav" id="nav-mobile">

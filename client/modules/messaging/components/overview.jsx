@@ -40,7 +40,7 @@ class UserConversationOverview extends React.Component {
 
         return (<li className="collection-item avatar" key={conversation._id}>
           <Link to={'/pm/' + conversation._id} >
-            <i className="material-icons circle">mail</i>
+            <i className="material-icons circle  pitchspot-blue-three">mail</i>
             <p>
               <span className="title">{users}</span>
               {date}
@@ -63,24 +63,40 @@ class UserConversationOverview extends React.Component {
   render() {
     const { conversations } = this.props;
     const { formatMessage } = this.props.intl;
+ /* <li>      <div className="">
+          <Link to={'/dashboard'}>
+          <div className="btn">
+           <span>Return to HomePage</span>
+            </div>
+          </Link> 
+      
+          </div>
+     </li>
+*/
     return (<div>
       <Helmet
         title={formatMessage({id: 'pm.messages.own', defaultMessage: 'Your messages'})}
       />
-      <section className="row valign-wrapper">
-        <h1 className="col m11 l11">
-          <Link to={'/dashboard'}>
-            <i className="material-icons">arrow_back</i>
-          </Link> <FormattedMessage id='common.pm' defaultMessage='Messages' />
-        </h1>
-        <div className="col m1 l1">
+  <div className="row card-panel RIP-Padding center-align pitchspot-blue-two">
+    <div className="RIP white-font">Inbox</div>
+  </div>
+      <section className="row valign-wrapper col s3">
+       <ul>
+       <li>
+
+</li>
+ 
+<li>
+        <div className="">
           <UserNewConversation
-            buttonText={<i className="large material-icons">add</i>}
-            buttonClass={'valign btn-floating btn-large waves-effect waves-light red'}
+            buttonText={<span>Add Conversations</span>}
+            buttonClass={'btn'}
           />
         </div>
+   </li>
+        </ul>
       </section>
-      <ul className="collection">
+      <ul className="collection col s9">
         {this.getConversations(conversations)}
       </ul>
     </div>);

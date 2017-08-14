@@ -1,1 +1,50 @@
 .paddingLogo { padding-top: 8px; }
+
+.custom-container{
+  padding-right: 15%;
+  padding-left: 15%;
+  width: 100%,
+}
+
+nav {
+    height: 42px !important;
+    line-height: 30px !important;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 42px !important;
+    line-height: 30px !important;
+}
+
+nav .button-collapse i {
+    height: 42px !important;
+    line-height: 30px !important;
+}
+
+nav .brand-logo { 
+    font-size: 1.0rem !important; 
+}
+
+@media only screen and (min-width: 601px){
+    nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+        height: 42px !important;
+        line-height: 30px !important;
+    }
+}
+
+.smo { font-size: 1.5rem !important; }
+
+.small-font {font-size: 0.9em !important;}
+
+.small-lock {font-size: 1.2em !important;}
+
+@media only screen and (min-width: 601px)
+{
+.navbar-fixed {
+    height: 45px !important;
+}
+}
+
+.nav-remove-shadow ul a:hover {
+    background-color: rgba(0, 0, 0, 0) !important;
+}

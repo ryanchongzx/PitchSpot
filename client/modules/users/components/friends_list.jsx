@@ -34,13 +34,13 @@ class FriendsList extends React.Component {
       <Helmet
         title={formatMessage({id: 'common.friends', defaultMessage: 'Friends'})}
       />
-      <h1>
-        <Link to={'/dashboard'}>
-          <i className="material-icons">arrow_back</i>
-        </Link> <FormattedMessage id='common.friends' defaultMessage='Friends' />
-      </h1>
+     
+  <div className="row card-panel RIP-Padding pitchspot-blue-two center-align">
+    <div className="RIP ">Friends</div>
+  </div>
+     
       <DashboardFriends />
-      <div className="row s12">
+      <div className="row col s12">
         <ul className="collection">
           {this.listFriends()}
         </ul>

@@ -46,18 +46,18 @@ class UserFriendsRequests extends React.Component {
         const requester = req.requester();
 
         return (<li key={requester._id} className="collection-item avatar">
-          <i className="material-icons circle">user</i>
-          <span className="title">{requester.username}</span>
+         <img src="/images/friends.jpg"/>
+          <span className="title username-display">{requester.username}</span>
           <p>
-            <a className="clickable" onClick={this.accept.bind(this, requester)} >
-              <i className="material-icons">check</i>
+            <a className="clickable " onClick={this.accept.bind(this, requester)} >
+              <i className="btn">Accept</i>
             </a>
             <a className="clickable" onClick={this.deny.bind(this, requester)} >
-              <i className="material-icons">cancel</i>
+              <i className="btn">Deny</i>
             </a>
           </p>
           <Link to={'/users/' + requester.username} className="secondary-content">
-            <i className="material-icons">send</i>
+            <i className="btn">View profile</i>
           </Link>
         </li>);
       });
@@ -75,11 +75,10 @@ class UserFriendsRequests extends React.Component {
       <Helmet
         title={formatMessage({id: 'user.friend.requests.title', defaultMessage: 'Friend requests'})}
       />
-      <h1>
-        <Link to={'/dashboard'}>
-          <i className="material-icons">arrow_back</i>
-        </Link> <FormattedMessage id='user.friend.requests.title' defaultMessage='Friendships requests' />
-      </h1>
+        <div className="row card-panel RIP-Padding pitchspot-blue-two">
+    <div className="RIP center-align">Friend Request</div>
+  </div>
+
       <ul className="collection">
         {this.request()}
       </ul>

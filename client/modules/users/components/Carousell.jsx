@@ -25,16 +25,22 @@ export default class Carousell extends React.Component {
   </div>
    </div>
 */
-<div className="row">
- <div className="carousel carousel-slider  ">
-    <div className="carousel-item " >
-    <img className="card-panel remove-padding " src="/images/Test.jpg" /></div>
-
+<div className="row carousel-container ">
+ <div className="carousel carousel-slider col s12 ">
     <div className="carousel-item " >
     <img className="card-panel remove-padding " src="/images/HomePagev2-2.jpg" /></div>
 
+    <div className="carousel-item " >
+    <img className="card-panel remove-padding " src="/images/Test.jpg" /></div>
+
+     <div className="carousel-item " >
+    <img className="card-panel remove-padding " src="/images/hpbdsg.jpg" /></div>
+
+
 
   </div>
+
+
 
 
 

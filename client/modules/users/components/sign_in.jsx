@@ -37,7 +37,8 @@ class UserLogin extends React.Component {
         title={formatMessage({id: 'common.signin', defaultMessage: 'Login'})}
       />
       <div className="col s12 m8 offset-m2 l4 offset-l4 center-align">
-        <h1>Login</h1>
+        <h1>       <img  src="/images/pitchspot-logo-1.png" height="100" className="brand-logo left " />
+        </h1>
         <Error error={this.props.error} />
         <form onSubmit={this.login.bind(this)}>
           <div className="input-field col s12 left-align">

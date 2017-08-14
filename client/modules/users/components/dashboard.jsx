@@ -17,8 +17,8 @@ export default class UserDashboard extends React.Component {
            <Carousell/> 
       <Helmet title="Dashboard" />
 <div>
-  <div className="row card-panel">
-    <h6>Recently Initiated Projects</h6>
+  <div className="row card-panel RIP-Padding pitchspot-blue-two">
+    <div className="RIP center-align">Recently Initiated Projects</div>
   </div>
     <NewFeedPost />
     <UserFeed userId={false} />

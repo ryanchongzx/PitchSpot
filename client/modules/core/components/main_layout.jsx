@@ -4,7 +4,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import Footer from './footer.jsx';
 import Navigation from '../containers/navigation.js';
-
+// <div id="contentView" className="container">
 const Layout = props => (
   <div id="app">
 
@@ -17,7 +17,7 @@ const Layout = props => (
     />
 
     <Navigation />
-    <div id="contentView" className="container">
+    <div id="contentView" className="custom-container">
       <div className="row">
         <div className="col s12">
           <main className="">
@@ -26,7 +26,7 @@ const Layout = props => (
         </div>
       </div>
     </div>
-    <Footer />
+  
   </div>
 );
 

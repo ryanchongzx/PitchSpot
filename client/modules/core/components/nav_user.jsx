@@ -29,37 +29,39 @@ class NavUser extends React.Component {
         src={this.props.avatar}
       /></span>);
     } else {
-      return (<i className="material-icons md-20">account_circle</i>);
+      return (<i className="material-icons smo">account_circle</i>);
     }
   }
 
   render() {
     return (<header className="navbar-fixed ">
-    <nav role="navigation" className="indigo darken-4">
-        <div className="nav-wrapper container paddingLogo">
+    <nav role="navigation" className="pitchspot-blue">
+        <div className="nav-wrapper custom-container paddingLogo">
           <ul className="left">
              <li>
               <Link to={'/dashboard'} className="brand-logo left">
-
-              <img  src="/images/navbar-logo.png" height="50" width="40" className="brand-logo left " />
-              
+  
+              <img  className="paddingLogo" src="/images/navbar-logo.png" height="30" width="24" className="brand-logo left " />
                 
               </Link>
               </li>
           
           </ul>
-          <ul className="right">
+          <Link to={'#'} data-activates="nav-mobile" className="button-collapse right">
+                <i className="material-icons">menu</i>
+              </Link>
+              <ul className="right hide-on-med-and-down">
 
 <DashboardFriends/>
 
-            <li className="hide-on-small-only">
-              <Link to={'/dashboard'} className="waves-effect"><i className="material-icons md-20">home</i></Link>
+            <li>
+              <Link to={'/dashboard'} className=""><i className="material-icons smo">home</i></Link>
             </li>
 
 
 
-            <li className="hide-on-med-and-down">
-              <Link to={'/pm'} className="waves-effect"><i className="material-icons md-20">mail</i></Link>
+            <li >
+              <Link to={'/pm'} className=""><i className="material-icons smo">mail_outline</i></Link>
             </li>
 
            
@@ -75,6 +77,40 @@ class NavUser extends React.Component {
               </a>
             </li>
           </ul>
+
+          <ul className="side-nav" id="nav-mobile">
+              <li>
+              <Link to={'/dashboard'} className="">Home</Link>
+            </li>
+
+
+
+            <li>
+              <Link to={'/pm'} className="">Inbox</Link>
+            </li>
+
+            <li><Link className="waves-effect" to={'/user/friends'}>
+              <FormattedMessage
+                id="common.friends"
+                defaultMessage="Friends"
+              />
+            </Link></li>
+            <li><Link className="waves-effect" to={'/user/settings'}>
+              <FormattedMessage
+                id="common.settings"
+                defaultMessage="Settings"
+              />
+            </Link></li>
+            <li><Link className="waves-effect" to={'/logout'}>
+              <FormattedMessage
+                id="common.signout"
+                defaultMessage="Logout"
+              />
+            </Link>
+            </li>
+            
+              </ul>
+
           <ul id="user-dropdown" className="dropdown-content">
             <li><Link className="waves-effect" to={'/user'}>
               <FormattedMessage
