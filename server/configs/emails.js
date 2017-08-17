@@ -20,9 +20,9 @@ export default function () {
     // process.env.MAIL_URL = Meteor.settings.mailUrl
 
     var smtp = {
-    username: 'teampitchspot@gmail.com',   // eg: server@gentlenode.com
-    password: 'stsyryzf',   // eg: 3eeP1gtizk5eziohfervU
-    server:   'smtp.gmail.com',  // eg: mail.gandi.net
+    username: 'hello@pitchspot.co',   // eg: server@gentlenode.com
+    password: 'Pitchspot123',   // eg: 3eeP1gtizk5eziohfervU
+    server:   'smtp.zoho.com',  // eg: mail.gandi.net
     port: 587
   };
 
